@@ -1,0 +1,22 @@
+function isPalindrome(word) {
+  // Check stop condition
+  if (word.length <= 1) {
+    return true;
+  }
+
+  // Compare characters at the ends of the word
+  if (word[0] === word[word.length - 1]) {
+    // Recursively check the rest of the word
+    return isPalindrome(word.slice(1, -1));
+  }
+
+  return false;
+}
+
+// Test the function
+let word = prompt("Enter a word:");
+if (isPalindrome(word)) {
+  console.log(`${word} is a palindrome.`);
+} else {
+  console.log(`${word} is not a palindrome.`);
+}
